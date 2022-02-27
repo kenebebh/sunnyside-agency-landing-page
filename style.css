@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 2rem;
+  background-color: lightskyblue;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.navbar__links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-evenly;
+}
+
+.navbar__links li {
+  list-style: none;
+}
+
+.navbar__links li a {
+  text-decoration: none;
+  padding: 1rem 3rem;
+  display: block;
+  color: white;
+}
+
+.navbar__links li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.toggle__button {
+  position: absolute;
+  right: 1rem;
+}
+
+.toggle__button,
+.toggle__button::before,
+.toggle__button::after {
+  width: 3rem;
+  height: 3px;
+  background-color: antiquewhite;
+  /* display: inline-block; */
+  display: none;
+}
+
+.toggle__button::before,
+.toggle__button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* transition: all 1s; */
+}
+
+.toggle__button::before {
+  top: -0.8rem;
+}
+
+.toggle__button::after {
+  top: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .toggle__button {
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+  }
+
+  .toggle__button,
+  .toggle__button::before,
+  .toggle__button::after {
+    display: inline-block;
+  }
+
+  .navbar__links {
+    display: none;
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    right: 3rem;
+    top: 7rem;
+    border-radius: 2px;
+    padding: 2rem 0;
+  }
+
+  .navbar__links li a {
+    color: black;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .navbar__links ul {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar__links li {
+    text-align: center;
+    /* width: 120px; */
+    padding: 0.7rem 0;
+  }
+
+  .selected {
+    background-color: hsl(51, 100%, 49%);
+    text-transform: uppercase;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .navbar__links.active {
+    display: inline-block;
+  }
+}

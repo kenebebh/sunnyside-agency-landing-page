@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&display=swap");
+
+:root {
+  --soft-red: hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  --dark-cyan: hsl(167, 40%, 24%);
+  --dark-blue: hsl(198, 62%, 26%);
+  --dark-moderate-cyan: hsl(168, 34%, 41%);
+  --moderate-cyan: hsl(165, 43%, 65%);
+
+  --very-dark-des-blue: hsl(212, 27%, 19%);
+  --very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --dark-grayish-blue: hsl(232, 10%, 55%);
+  --grayish-blue: hsl(210, 4%, 67%);
+  --white: hsl(0, 0%, 100%);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,9 +26,40 @@ html {
 }
 
 body {
+  font-family: "Barlow", sans-serif;
   box-sizing: border-box;
   font-size: 2rem;
-  background-color: lightskyblue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: lightpink;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fraunces", sans-serif;
+}
+
+.container {
+  width: 80%;
+  background-color: white;
+}
+
+/* styles for the header and the navbar  */
+
+.header {
+  background: #37bff5 url(images/desktop/image-header.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
 }
 
 .navbar {
@@ -26,7 +74,6 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  /* border: 1px solid black; */
   justify-content: space-evenly;
 }
 
@@ -45,8 +92,8 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50px;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: bold;
+  /* font-size: 1.5rem;
+  font-weight: bold;*/
 }
 
 .toggle__button {
@@ -60,7 +107,6 @@ body {
   width: 3rem;
   height: 3px;
   background-color: antiquewhite;
-  /* display: inline-block; */
   display: none;
 }
 
@@ -69,7 +115,6 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  /* transition: all 1s; */
 }
 
 .toggle__button::before {
@@ -80,11 +125,332 @@ body {
   top: 0.8rem;
 }
 
-@media (max-width: 600px) {
+.header__text {
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  transform: translate(50%, 20%);
+  font-size: 2rem;
+}
+
+.header__text > h1 {
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  letter-spacing: 0.5rem;
+}
+
+.arrow {
+  width: 2.2rem;
+  height: 8rem;
+}
+
+/* The styles for the main content */
+
+main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "transform egg"
+    "cup stand"
+    "graphic photo"
+    "testimonials testimonials"
+    "random-pics random-pics";
+}
+
+#egg {
+  grid-area: egg;
+  width: 100%;
+}
+
+#cup {
+  grid-area: cup;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  padding: 0 10rem;
+}
+
+#transform {
+  grid-area: transform;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content h2 {
+  font-weight: 900;
+  padding: 2rem 0;
+  color: var(--very-dark-des-blue);
+  width: 60%;
+}
+
+.content p {
+  color: var(--dark-grayish-blue);
+  padding: 0 0 2rem;
+}
+
+a {
+  text-decoration-color: var(--yellow);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 0.2rem;
+  padding: 1rem 3rem;
+}
+
+.learn {
+  /* display: flex;
+  justify-content: flex-start; */
+  padding: 1rem 0.1rem;
+  text-transform: uppercase;
+  color: var(--very-dark-des-blue);
+  font-size: 1rem;
+  font-family: "Fraunces", sans-serif;
+}
+
+#stand {
+  grid-area: stand;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#graphic {
+  grid-area: graphic;
+  background: url("images/desktop/image-graphic-design.jpg");
+  background-position: center top;
+  color: var(--dark-cyan);
+  padding: 15rem 5rem 20rem;
+  text-align: center;
+  height: 50rem;
+  position: relative;
+}
+
+#photo {
+  background-image: url(images/desktop/image-photography.jpg);
+  background-position: center top;
+  background-size: cover;
+  color: var(--dark-blue);
+  padding: 15rem 5rem 20rem;
+  text-align: center;
+  grid-area: photo;
+  height: 50rem;
+  position: relative;
+}
+
+.graphic__content,
+.photo__content {
+  position: absolute;
+  top: 60%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  padding: 0 10rem;
+  width: 80%;
+  text-align: center;
+}
+
+#photo h3,
+#graphic h3 {
+  padding: 0.5rem 0 1.5rem;
+  font-weight: 900;
+}
+
+#photo p,
+#graphic p {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  opacity: 80%;
+}
+
+/* The testimonials */
+
+.testimonials {
+  grid-area: testimonials;
+  width: 100%;
+  padding: 2rem 0 4rem 0;
+}
+
+.testimonials__heading {
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0 1rem;
+}
+.testimonials__heading h3 {
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  font-size: 2rem;
+}
+
+.testimonials__content {
+  display: flex;
+  padding: 4rem;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-holder {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 4rem;
+}
+.person-pic {
+  width: 6rem;
+  border-radius: 50%;
+}
+
+.word {
+  color: var(--very-dark-des-blue);
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  word-spacing: 0.2rem;
+  opacity: 90%;
+  padding: 0 0 5rem 0;
+  text-align: center;
+  width: 80%;
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+.job {
+  color: var(--grayish-blue);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+/* the pictures below */
+
+#random-pics {
+  grid-area: random-pics;
+  display: flex;
+  width: 100%;
+}
+
+.pics {
+  width: 25%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#pic1 {
+  background-image: url("images/desktop/image-gallery-milkbottles.jpg");
+  grid-area: pic1;
+}
+
+#pic2 {
+  background-image: url("images/desktop/image-gallery-orange.jpg");
+  grid-area: pic2;
+}
+
+#pic3 {
+  background-image: url("images/desktop/image-gallery-cone.jpg");
+  grid-area: pic3;
+}
+
+#pic4 {
+  background-image: url("images/desktop/image-gallery-sugarcubes.jpg");
+  grid-area: pic4;
+}
+/* 
+The footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--dark-cyan);
+  background-color: var(--moderate-cyan);
+  padding: 5rem 0;
+}
+
+.footer__logo {
+  font-size: 2.5rem;
+}
+
+.footer__links ul {
+  margin: 0;
+  padding: 2rem 0 5rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__links li {
+  list-style: none;
+}
+
+.footer__links li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  display: block;
+  color: var(--dark-cyan);
+}
+
+svg,
+path:hover {
+  fill: var(--white);
+}
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    width: 100%;
+    background-color: white;
+    padding: 0;
+  }
+
+  /* styles for the header and the navbar  */
+
+  .header {
+    background: #37bff5 url(images/mobile/image-header.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60vh;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 2rem;
+  }
   .toggle__button {
     position: absolute;
     right: 1rem;
     top: 1.5rem;
+  }
+
+  .person {
+    padding: 0.5rem;
   }
 
   .toggle__button,
@@ -98,8 +464,8 @@ body {
     width: 80%;
     background-color: white;
     position: absolute;
-    right: 3rem;
-    top: 7rem;
+    right: 50%;
+    transform: translate(50%, 20%);
     border-radius: 2px;
     padding: 2rem 0;
   }
@@ -137,5 +503,134 @@ body {
 
   .navbar__links.active {
     display: inline-block;
+  }
+
+  /* The body */
+
+  main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "egg egg"
+      "transform transform"
+      "cup cup"
+      "stand stand"
+      "graphic graphic"
+      "photo photo"
+      "testimonials testimonials"
+      "random-pics random-pics";
+  }
+  .content {
+    width: 100%;
+    padding: 8rem 5rem;
+  }
+
+  .content h2 {
+    font-weight: 900;
+    padding: 2rem 0;
+    color: var(--very-dark-des-blue);
+    width: 100%;
+  }
+
+  .content p {
+    color: var(--dark-grayish-blue);
+    padding: 0 0 2rem;
+  }
+
+  #transform,
+  #stand {
+    text-align: center;
+    position: relative;
+  }
+
+  .learn {
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-40%, 20%);
+  }
+
+  #graphic {
+    grid-area: graphic;
+    background: url("images/mobile/image-graphic-design.jpg");
+    background-position: top;
+    color: var(--dark-cyan);
+    padding: 15rem 5rem 20rem;
+    text-align: center;
+    height: 60rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #photo {
+    background-image: url(images/mobile/image-photography.jpg);
+    background-position: center top;
+    background-size: cover;
+    color: var(--dark-blue);
+    padding: 15rem 5rem 20rem;
+    text-align: center;
+    grid-area: photo;
+    height: 55rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .graphic__content,
+  .photo__content {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    padding: 2rem 5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* the testimonials */
+
+  .testimonials__heading h3 {
+    font-size: 1.3rem;
+  }
+
+  .testimonials__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .word {
+    padding: 0 0 2rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .person {
+    padding: 0 0 5rem 0;
+  }
+
+  .pics {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 9rem;
+  }
+
+  #pic1 {
+    background-image: url("images/mobile/image-gallery-cone.jpg");
+  }
+
+  #pic2 {
+    background-image: url("images/mobile/image-gallery-orange.jpg");
+  }
+
+  #pic3 {
+    background-image: url("images/mobile/image-gallery-cone.jpg");
+  }
+
+  #pic4 {
+    background-image: url("images/mobile/image-gallery-sugar-cubes.jpg");
   }
 }

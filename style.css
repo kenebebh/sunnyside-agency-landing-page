@@ -92,8 +92,9 @@ h4 {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50px;
   text-transform: uppercase;
-  /* font-size: 1.5rem;
-  font-weight: bold;*/
+  font-size: 1.7rem;
+  font-weight: bold;
+  height: fit-content;
 }
 
 .toggle__button {
@@ -227,7 +228,7 @@ a {
   color: var(--dark-cyan);
   padding: 15rem 5rem 20rem;
   text-align: center;
-  height: 50rem;
+  height: 60rem;
   position: relative;
 }
 
@@ -239,7 +240,7 @@ a {
   padding: 15rem 5rem 20rem;
   text-align: center;
   grid-area: photo;
-  height: 50rem;
+  height: 60rem;
   position: relative;
 }
 
@@ -420,7 +421,7 @@ path:hover {
   overflow: hidden;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   body {
     padding: 0;
   }
@@ -442,6 +443,7 @@ path:hover {
     text-align: center;
     position: relative;
     padding: 2rem;
+    z-index: 10;
   }
   .toggle__button {
     position: absolute;
@@ -497,31 +499,20 @@ path:hover {
     background-color: hsl(51, 100%, 49%);
     text-transform: uppercase;
     border-radius: 50px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
   }
 
   .navbar__links.active {
     display: inline-block;
+    z-index: 50;
   }
 
   .header__text {
-    position: absolute;
     top: 18%;
     right: 50%;
     transform: translate(50%, 20%);
     font-size: 1.8rem;
-  }
-
-  .header__text > h1 {
-    text-transform: uppercase;
-    margin-bottom: 5rem;
-    letter-spacing: 0.5rem;
-  }
-
-  .arrow {
-    width: 2.2rem;
-    height: 8rem;
   }
 
   /* The body */
@@ -651,5 +642,73 @@ path:hover {
 
   #pic4 {
     background-image: url("images/mobile/image-gallery-sugar-cubes.jpg");
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    width: 100%;
+    background-color: white;
+  }
+
+  .header {
+    background: #37bff5 url(images/desktop/image-header.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
+
+  .navbar__links li a {
+    padding: 1rem 2rem;
+  }
+
+  .header__text {
+    top: 15%;
+    right: 50%;
+    transform: translate(50%, 20%);
+    font-size: 2rem;
+  }
+
+  .header__text > h1 {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .arrow {
+    width: 2.2rem;
+    height: 8rem;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 4rem;
+  }
+
+  .content h2 {
+    width: 100%;
+  }
+
+  .graphic__content,
+  .photo__content {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    padding: 0 5rem;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 11500px) {
+  .header {
+    background: #37bff5 url(images/desktop/image-header.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70vh;
   }
 }

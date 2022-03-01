@@ -32,8 +32,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: lightpink;
-  padding: 2rem;
+  background-color: #f3e8ea;
+  padding: 0.1rem 2rem;
 }
 
 h1,
@@ -44,7 +44,7 @@ h4 {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   background-color: white;
 }
 
@@ -437,7 +437,7 @@ path:hover {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 60vh;
+    height: 70vh;
     color: white;
     text-align: center;
     position: relative;
@@ -505,6 +505,25 @@ path:hover {
     display: inline-block;
   }
 
+  .header__text {
+    position: absolute;
+    top: 18%;
+    right: 50%;
+    transform: translate(50%, 20%);
+    font-size: 1.8rem;
+  }
+
+  .header__text > h1 {
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .arrow {
+    width: 2.2rem;
+    height: 8rem;
+  }
+
   /* The body */
 
   main {
@@ -547,7 +566,7 @@ path:hover {
   .learn {
     position: relative;
     bottom: 10px;
-    left: 50%;
+    left: 45%;
     transform: translate(-40%, 20%);
   }
 
